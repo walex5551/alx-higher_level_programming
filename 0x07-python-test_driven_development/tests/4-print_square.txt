@@ -1,0 +1,61 @@
+Tests for ''4-print_square''
+==============================
+
+from ''print_square''
+------------------------------
+
+import:
+    >>> print_square = __import__('4-print_square').print_square
+
+size is an integer > 0:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+integer size < 0:
+    >>> print_square(-3)
+    Traceback (most recent call last):
+    	      ...
+    ValueError: size must be >= 0
+
+size is 0:
+    >>> print_square(0)
+    
+
+float size:
+    >>> print_square(3.14)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+negative float size:
+    >>> print_square(-3.14)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+None size:
+    >>> print_square(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+infinite size:
+    >>> print_square(int('inf'))
+    Traceback (most recent call last):
+        ...
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+empty size:
+    >>> print_square()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+empty size 2:
+    >>> print_square("")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
